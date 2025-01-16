@@ -18,16 +18,16 @@ public class Main {
             int number = scanner.nextInt();
             switch(number){
                 case 1:
-                    addList.execute();
+                    AddTask.execute();
                     break;
                 case 2:
-                    viewList.execute();
+                    ViewTodo.execute();
                     break;
                 case 3:
-                    updateList.execute();
+                    UpdateTodo.execute();
                     break;
                 case 4:
-                    deleteList.execute();
+                    DeleteTask.execute();
                     break;
                 case 5:
                     System.out.println("To-DO List를 종료합니다.");

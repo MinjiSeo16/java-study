@@ -1,11 +1,11 @@
 package minji;
 
-public class viewList {
+public class ViewTodo {
     public static void execute(){
 
         System.out.println("할 일 목록 !!");
         System.out.println("-------------");
-        listMemory.view();
+        ListMemory.displayTasks();
         System.out.println("-------------");
     }
 }

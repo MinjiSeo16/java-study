@@ -1,23 +1,23 @@
 package minji;
 
 public class Task {
-    private String toDo;
-    private boolean check;
+    private String todo;
+    private boolean isCheck;
 
-    public Task(String toDo, boolean check){
-        this.toDo = toDo;
-        this.check = check;
+    public Task(String todo, boolean isCheck){
+        this.todo = todo;
+        this.isCheck = isCheck;
     }
 
-    public void setCheck(boolean check){
-        this.check = check;
+    public void setCheck(boolean isCheck){
+        this.isCheck = isCheck;
     }
 
     public String getTask(){
-        return toDo;
+        return todo;
     }
 
-    public boolean getCheck(){
-        return check;
+    public boolean isCheck(){
+        return isCheck;
     }
 }
