@@ -6,6 +6,7 @@ public class Input {
 
     Scanner scanner = new Scanner(System.in);
     private ListMemory listMemory;
+    private Output output = new Output();
 
     public Input(ListMemory listMemory){
         this.listMemory = listMemory;
@@ -16,7 +17,7 @@ public class Input {
         String todo = scanner.nextLine();
         Task task = new Task(todo, false);
         listMemory.save(task);
-        System.out.println("저장되었습니다.");
+        output.save();
     }
 
     public void viewTodo(){
@@ -32,7 +33,7 @@ public class Input {
             System.out.println("상태를 수정할 번호를 선택해주세요: ");
             int updateNum = scanner.nextInt();
             listMemory.updateTask(updateNum);
-            System.out.println("상태를 수정하였습니다.");
+            output.update();
         }
     }
 
@@ -42,7 +43,7 @@ public class Input {
             System.out.println("삭제할 일의 번호를 선택해주세요: ");
             int taskNumber = scanner.nextInt();
             listMemory.deleteTask(taskNumber);
-            System.out.println("선택한 일을 삭제하였습니다.");
+            output.delete();
         }
     }
 }
