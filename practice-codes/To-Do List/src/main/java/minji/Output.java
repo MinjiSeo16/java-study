@@ -12,6 +12,26 @@ public class Output {
         System.out.println("원하는 번호를 선택해주세요: ");
     }
 
+    public void printCreateTodo(){
+        System.out.println("할 일을 입력해주세요: ");
+    }
+
+    public void updateNumber(){
+        System.out.println("상태를 수정할 번호를 선택해주세요: ");
+    }
+
+    public void deleteNumber(){
+        System.out.println("삭제할 일의 번호를 선택해주세요: ");
+    }
+
+    public void makeList(){
+        System.out.println("할 일 목록 !!");
+    }
+
+    public void makeMark(){
+        System.out.println("-------------");
+    }
+
     public void goOut(){
         System.out.println("To-DO List를 종료합니다.");
     }
