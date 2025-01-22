@@ -22,8 +22,18 @@ public class Input {
         return taskNumber;
     }
 
-    public int InputMenu() {
+    public int inputMenu() {
         int menu = scanner.nextInt();
         return menu;
+    }
+
+    public String inputName(){
+        String name = scanner.next();
+        return name;
+    }
+
+    public int selectNumber(){
+        int number = scanner.nextInt();
+        return number;
     }
 }

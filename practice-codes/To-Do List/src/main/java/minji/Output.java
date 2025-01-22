@@ -25,7 +25,7 @@ public class Output {
     }
 
     public void makeList(){
-        System.out.println("할 일 목록 !!");
+        System.out.println("님 할 일 목록 !!");
     }
 
     public void makeMark(){
@@ -54,5 +54,18 @@ public class Output {
 
     public void delete(){
         System.out.println("선택한 일을 삭제하였습니다.");
+    }
+
+    public void printName(){
+        System.out.println("이름을 입력해주세요.");
+    }
+
+    public void saveName(){
+        System.out.println("사용자를 등록하였습니다.");
+    }
+
+    public void printNotFound(){
+        System.out.println("존재하지 않는 사용자입니다.");
+        System.out.println("다시 입력하려면 '1', 등록하려면 '2', 종료하려면 3을 눌러주세요.");
     }
 }

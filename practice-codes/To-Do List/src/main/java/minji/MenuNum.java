@@ -1,5 +1,7 @@
 package minji;
 
+import java.util.Arrays;
+
 public enum MenuNum {
     ADD_TODO(1),
     VIEW_TODO(2),
@@ -18,11 +20,10 @@ public enum MenuNum {
     }
 
     public static MenuNum fromValue(int value) {
-        for (MenuNum menu : values()) {
-            if (menu.getValue() == value) {
-                return menu;
-            }
-        }
-        return null;
+        return Arrays.stream(values())
+                .filter(menu -> menu.getValue() == value)
+                // Stream<MenuNum> -> Optional<MenuNum>
+                .findFirst()
+                .orElse(null);
     }
 }

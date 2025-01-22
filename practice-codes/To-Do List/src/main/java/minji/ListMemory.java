@@ -1,13 +1,14 @@
 package minji;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListMemory {
 
     private static final int INDEX_OFFSET = 1;
     private static final String COMPLETED = "(완료)";
     private static final String UNCOMPLETED = "(미완료)";
-    private ArrayList<Task> tasks = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
 
     public void save(Task task){
         tasks.add(task);

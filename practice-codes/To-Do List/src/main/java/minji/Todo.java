@@ -2,14 +2,20 @@ package minji;
 
 public class Todo {
 
-    public void run(){
-        ListMemory listMemory = new ListMemory();
-        Input input = new Input();
-        Output output = new Output();
+    private final ListMemory listMemory;
+    private final Input input;
+    private final Output output;
 
+    public Todo(ListMemory listMemory, Input input, Output output){
+        this.listMemory = listMemory;
+        this.input = input;
+        this.output = output;
+    }
+
+    public void run(){
         while(true){
             output.showMenu();
-            int number = input.InputMenu();
+            int number = input.inputMenu();
             MenuNum menu = MenuNum.fromValue(number);
             switch(menu){
                 case ADD_TODO -> {
@@ -22,12 +28,16 @@ public class Todo {
                     output.makeList();
                     output.makeMark();
                     boolean isEmpty = listMemory.displayTasks();
-                    if(isEmpty) output.showEmptyList();
+                    if(isEmpty){
+                        output.showEmptyList();
+                    }
                     output.makeMark();
                 }
                 case UPDATE_TODO -> {
                     boolean isEmpty = listMemory.displayTasks();
-                    if(isEmpty) output.showEmptyList();
+                    if(isEmpty){
+                        output.showEmptyList();
+                    }
                     else{
                         output.updateNumber();
                         int updateNum = input.updateTodo();
@@ -37,7 +47,9 @@ public class Todo {
                 }
                 case DELETE_TODO -> {
                     boolean isEmpty = listMemory.displayTasks();
-                    if(isEmpty) output.showEmptyList();
+                    if(isEmpty){
+                        output.showEmptyList();
+                    }
                     else{
                         output.deleteNumber();
                         int deleteNum = input.deleteTodo();
@@ -45,7 +57,10 @@ public class Todo {
                         output.delete();
                     }
                 }
-                case EXIT -> output.goOut();
+                case EXIT -> {
+                    output.goOut();
+                    return;
+                }
                 default -> output.printError();
             }
         }
