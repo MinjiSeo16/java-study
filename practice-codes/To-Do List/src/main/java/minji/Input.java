@@ -7,7 +7,7 @@ public class Input {
     Scanner scanner = new Scanner(System.in);
 
     public Task addTodo(){
-        String todo = scanner.nextLine();
+        String todo = scanner.next();
         Task newTask = new Task(todo, false);
         return newTask;
     }
@@ -30,10 +30,5 @@ public class Input {
     public String inputName(){
         String name = scanner.next();
         return name;
-    }
-
-    public int selectNumber(){
-        int number = scanner.nextInt();
-        return number;
     }
 }

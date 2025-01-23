@@ -3,11 +3,13 @@ package minji;
 import java.util.Arrays;
 
 public enum MenuNum {
-    ADD_TODO(1),
-    VIEW_TODO(2),
-    UPDATE_TODO(3),
-    DELETE_TODO(4),
-    EXIT(5);
+    REGISTER_USER(1),
+    SELECT_USER(2),
+    ADD_TODO(3),
+    VIEW_TODO(4),
+    UPDATE_TODO(5),
+    DELETE_TODO(6),
+    EXIT(7);
 
     private final int value;
 

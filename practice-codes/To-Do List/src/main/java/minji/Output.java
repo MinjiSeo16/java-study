@@ -4,11 +4,13 @@ public class Output {
 
     public void showMenu(){
         System.out.println("[To-DO List]");
-        System.out.println("1. 할 일 추가" + "\n"
-                + "2. 할 일 보기" + "\n"
-                + "3. 할 일 상태 수정하기" + "\n"
-                + "4. 할 일 삭제하기" + "\n"
-                + "5. 종료하기");
+        System.out.println("1. 사용자 등록하기" + "\n"
+                + "2. 사용자 선택하기" + "\n"
+                + "3. 할 일 추가" + "\n"
+                + "4. 할 일 보기" + "\n"
+                + "5. 할 일 상태 수정하기" + "\n"
+                + "6. 할 일 삭제하기" + "\n"
+                + "7. 종료하기");
         System.out.println("원하는 번호를 선택해주세요: ");
     }
 
@@ -56,16 +58,19 @@ public class Output {
         System.out.println("선택한 일을 삭제하였습니다.");
     }
 
-    public void printName(){
-        System.out.println("이름을 입력해주세요.");
+    public void registerName(){
+        System.out.println("등록할 사용사 이름을 입력해주세요: ");
     }
 
-    public void saveName(){
-        System.out.println("사용자를 등록하였습니다.");
+    public void selectName(){
+        System.out.println("To-Do List 사용자 이름을 입력해주세요: ");
     }
 
-    public void printNotFound(){
-        System.out.println("존재하지 않는 사용자입니다.");
-        System.out.println("다시 입력하려면 '1', 등록하려면 '2', 종료하려면 3을 눌러주세요.");
+    public void notFound(){
+        System.out.println("해당 사용자를 찾을 수 없습니다.");
+    }
+
+    public void showEmptyUser(){
+        System.out.println("등록된 사용자가 없습니다.");
     }
 }

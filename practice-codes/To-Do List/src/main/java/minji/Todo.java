@@ -2,12 +2,13 @@ package minji;
 
 public class Todo {
 
-    private final ListMemory listMemory;
+    private final MemoryStore memoryStore;
     private final Input input;
     private final Output output;
+    private String currentName;
 
-    public Todo(ListMemory listMemory, Input input, Output output){
-        this.listMemory = listMemory;
+    public Todo(MemoryStore memoryStore, Input input, Output output){
+        this.memoryStore = memoryStore;
         this.input = input;
         this.output = output;
     }
@@ -18,42 +19,75 @@ public class Todo {
             int number = input.inputMenu();
             MenuNum menu = MenuNum.fromValue(number);
             switch(menu){
+                case REGISTER_USER -> {
+                    output.registerName();
+                    String name = input.inputName();
+                    memoryStore.register(name);
+                    output.save();
+                }
+                case SELECT_USER -> {
+                    output.selectName();
+                    String name = input.inputName();
+                    if(memoryStore.existName(name)){
+                        currentName = name;
+                        output.selectName();
+                    }
+                    else{
+                        output.notFound();
+                    }
+                }
                 case ADD_TODO -> {
+                    if(currentName == null){
+                        output.showEmptyUser();
+                        continue;
+                    }
                     output.printCreateTodo();
                     Task newTask = input.addTodo();
-                    listMemory.save(newTask);
+                    memoryStore.save(currentName, newTask);
                     output.save();
                 }
                 case VIEW_TODO -> {
+                    if(currentName == null){
+                        output.showEmptyUser();
+                        continue;
+                    }
                     output.makeList();
                     output.makeMark();
-                    boolean isEmpty = listMemory.displayTasks();
+                    boolean isEmpty = memoryStore.displayTasks(currentName);
                     if(isEmpty){
                         output.showEmptyList();
                     }
                     output.makeMark();
                 }
                 case UPDATE_TODO -> {
-                    boolean isEmpty = listMemory.displayTasks();
+                    if(currentName == null){
+                        output.showEmptyUser();
+                        continue;
+                    }
+                    boolean isEmpty = memoryStore.displayTasks(currentName);
                     if(isEmpty){
                         output.showEmptyList();
                     }
                     else{
                         output.updateNumber();
                         int updateNum = input.updateTodo();
-                        listMemory.updateTask(updateNum);
+                        memoryStore.updateTask(currentName, updateNum);
                         output.update();
                     }
                 }
                 case DELETE_TODO -> {
-                    boolean isEmpty = listMemory.displayTasks();
+                    if(currentName == null){
+                        output.showEmptyUser();
+                        continue;
+                    }
+                    boolean isEmpty = memoryStore.displayTasks(currentName);
                     if(isEmpty){
                         output.showEmptyList();
                     }
                     else{
                         output.deleteNumber();
                         int deleteNum = input.deleteTodo();
-                        listMemory.deleteTask(deleteNum);
+                        memoryStore.deleteTask(currentName, deleteNum);
                         output.delete();
                     }
                 }
