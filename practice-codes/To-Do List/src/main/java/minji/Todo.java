@@ -1,5 +1,7 @@
 package minji;
 
+import java.util.Optional;
+
 public class Todo {
 
     private final MemoryStore memoryStore;
@@ -17,7 +19,13 @@ public class Todo {
         while(true){
             output.showMenu();
             int number = input.inputMenu();
-            MenuNum menu = MenuNum.fromValue(number);
+            Optional<MenuNum> optionalMenu = MenuNum.fromValue(number);
+            if(optionalMenu.isEmpty()){
+                output.printError();
+                continue;
+            }
+            MenuNum menu = optionalMenu.get();
+
             switch(menu){
                 case REGISTER_USER -> {
                     output.registerName();

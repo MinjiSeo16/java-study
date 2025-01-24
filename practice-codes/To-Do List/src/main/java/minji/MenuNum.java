@@ -1,6 +1,7 @@
 package minji;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public enum MenuNum {
     REGISTER_USER(1),
@@ -21,11 +22,10 @@ public enum MenuNum {
         return value;
     }
 
-    public static MenuNum fromValue(int value) {
+    public static Optional<MenuNum> fromValue(int value) {
         return Arrays.stream(values())
                 .filter(menu -> menu.getValue() == value)
                 // Stream<MenuNum> -> Optional<MenuNum>
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 }
