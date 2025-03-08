@@ -13,4 +13,4 @@
 #### 8. enum [-> velog](https://velog.io/@smj_716/Enum)
 #### 9. 애노테이션 [-> velog](https://velog.io/@smj_716/%EC%95%A0%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98)
 #### 10. I/O [-> velog](https://velog.io/@smj_716/IO)
-#### 11. Blocking/Non-Blocking과 동기/비동기 [-> velog](https://velog.io/@smj_716/BlockingNon-Blocking)
+##### Blocking/Non-Blocking과 동기/비동기 (추가 내용) [-> velog](https://velog.io/@smj_716/BlockingNon-Blocking)
