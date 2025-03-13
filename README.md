@@ -9,3 +9,5 @@ Java를 공부하며 작성한 코드와 개념을 정리한 레포지토리입�
 
 - ### practice-codes
   - [To-Do List](https://github.com/MinjiSeo16/java-study/tree/main/practice-codes/To-Do%20List#to-do-list)
+  - [book-inventory](https://github.com/MinjiSeo16/java-book-inventory)
+  - [Movie-Ticket Booker](https://github.com/MinjiSeo16/Movie-Ticket-Booker)
